@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global.css" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+    
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header class="head">
+            <a href="#" class="logo" ><img src="./images/ice-logo.png" alt="logo" title="logo" width="90px" /></a>
+
+            <img src="https://img.icons8.com/metro/26/000000/menu.png" onclick="toggleMenu()" class="menu-icon" />
+            <ul class="nav-list">
+                <li class="nav-item">Home</li>
+                <li class="nav-item">Contact</li>
+                <li class="nav-item">About Us</li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>The best time for ice cream is <br><span>always.</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis molestiae qui praesentium placeat sapiente error vero tenetur, ab perferendis sint voluptate beatae, soluta sunt, animi aliquid consectetur numquam ratione rerum.</p>
+                <a class="learn-button">Learn More</a>
+            </div>
+
+            <div class="imgBox">
+                <img class="big-image" height="500px" src="./images/ice-jaune-grand.png" alt="ice cream" title="ice" />
+            </div>
+            
+        </div>
+
+        <div class="thumbnails">
+            <ul>
+                <li><img  onclick="imageChanger('./images/ice-jaune-grand.png', 'jaune')" height="150px"  src="./images/ice-jaune-petit.png" alt="ice jaune"/></li>
+                <li><img onclick="imageChanger('./images/ice-cafe-grand.png' , 'cafe')"  height="150px" src="./images/ice-cafe-petit.png" alt="ice cafe"/></li>
+                <li><img onclick="imageChanger('./images/ice-orange-grand.png' , 'orange')"  height="150px" src="./images/ice-orange-petit.png" alt="ice orange"/></li>
+            </ul>
+        </div>
+
+        <div class="social-media">
+            <ul >
+                <li><a href="https://github.com/eteka03"><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/github.svg" /></a></li>
+                <li><a href="https://www.linkedin.com/in/claver-akpaki/"><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/linkedin.svg" /></a></li>
+                <li><a href="mailto:eteka03.akpaki@gmail.com"><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/gmail.svg" /></a></li>
+            </ul>
+        </div>
+
+    </section>
+    <script type="text/javascript">
+        function imageChanger(i , color){
+             
+            document.querySelector('.big-image').src = i
+
+            switch (color) {
+                case "jaune":
+
+                    document.querySelector('.circle').style.background = "#FEE49D"
+                    break;
+                case "orange":
+                    document.querySelector('.circle').style.background = "#FE8B58";
+                    break
+                case "cafe":
+                    document.querySelector('.circle').style.background = "#955F39"
+                    break
+            
+                default:
+                    break;
+            }
+        }
+
+        function toggleMenu(){
+          let menuToggler =   document.querySelector('.menu-icon')
+          let nav = document.querySelector(".nav-list")
+          let head = document.querySelector(".head")
+
+          menuToggler.classList.toggle('active')
+           nav.classList.toggle("active")
+           head.classList.toggle('active') 
+          if(menuToggler.classList.contains('active')) {
+              menuToggler.src="https://img.icons8.com/ios/50/000000/multiply.png"
+          }
+          else{
+              menuToggler.src = "https://img.icons8.com/metro/26/000000/menu.png"
+          }
+        }
+    </script>
+</body>
+</html>
